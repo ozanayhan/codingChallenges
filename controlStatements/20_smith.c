@@ -1,22 +1,25 @@
-#include <stdio.h>
+// Lists all the Smith numbers (*) up to a user given number N.
 
+// Copyright (C) 2025 O. Ayhan
+
+// (*) In number theory, a Smith number is a composite number for which, 
+// in a given number base, the sum of its digits is equal to 
+// the sum of the digits in its prime factorization in the same base. 
+// (Source: Wikipedia)
+
+#include <stdio.h>
 // initialize the smallest prime number 2.
 int smallest_prime = 2;
-
 // initialize the biggest prime number up to the sqrt of x1 as 3.
 // This value will be updated as bigger prime divisor numbers are found.
 int biggest_prime_till_sqrt_of_x1 = 3;
-
 // initialize the number of elements inside the prime array with 2 elements 
 // Currently, (only 2 and 3 are in the list, so 2 elements).
 int number_of_primes = 2;
-
  //initialize the variable to be checked starting with 4 (next number after 2 and 3);
 int var_element = 4;
-
  // initialize calculated value of isprime as 1;
 int isprime_calc = 1;
-
 int get_digitsum(int x)
 {
     int base_number = x;
@@ -28,7 +31,6 @@ int get_digitsum(int x)
     }
     return digitsum;
 }
-
 void getprime_array(int size_prime_array, int prime_array[])
 {   
     // iteration continues up to the square root of the number.
@@ -57,21 +59,16 @@ void getprime_array(int size_prime_array, int prime_array[])
         ++var_element;
     }
 }
-
 int main(void)
 {
     int x;
-    printf("hangi sayilara kadar olan Smith sayilarini bulmak istersiniz?: ");
+    printf("Please enter a number up to which all the Smith numbers will be displayed: ");
     scanf("%d", &x);
-
     int prime_array[x];
-
     // Fill the arrays elements for the first 2 elements.
     prime_array[0] = smallest_prime;
     prime_array[1] = biggest_prime_till_sqrt_of_x1;
-
     getprime_array(x, prime_array);
-
     for (int i = 1; i <= x; i++) {
         int j = 0;
         int sum_factors = 0;
