@@ -1,4 +1,4 @@
-// Finds the sub sequent array inside an array that has the maximum sum.
+// Finds the consecutive sub-array inside an array that has the maximum sum.
 
 // Copyright (C) 2025 O. Ayhan
 
@@ -6,19 +6,28 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 10
+#define SIZE 100
 
 int main(void)
 {
-    int a[SIZE];
 
-    srand((unsigned)time(0));
+    int a[SIZE] = {
+        -3818, 7277, -5116, -1233, 259, -2731, -6153, 5436, 410, 2644,
+    -3415, -3632, -4076, 3857, -2641, -7184, -7326, 159, 914, 369,
+    -7894, -1036, 9549, 1294, 5087, -5822, 5926, 517, -616, 6796,
+    -4567, 2919, 3926, -1523, 8237, -4524, -2910, -2450, -8904, 7021,
+    -6811, -3598, 1502, -5544, 2990, -2191, 6920, 9696, 1849, 9697,
+    -7348, 7370, 3492, -7189, 2994, -5041, 840, 7341, 3927, 6387,
+    2790, 9683, 5612, 4786, 8913, 3554, -2784, 2276, 4639, -4315,
+    -402, 5779, -3085, -6194, 2952, 2110, -3960, -2223, -827, 693,
+    -3588, 8045, 7817, 7841, -6473, -670, -5681, 1050, -9041, -5381,
+    -5371, -4239, -5563, 6075, -1485, -4082, -3931, -363, 1686, 5753,
+      };
     for (int i = 0; i < SIZE; ++i)
     {
-        a[i] = rand() % 20 - 15;
+        printf("%d ", a[i]);
     }
-    //int a[SIZE] = {-2, -20, -17, -16, -3, -19, -16, -18, -10, -8};
-    for (int i = 0; i < SIZE; ++i)
+    for (int i = 22; i < 83; ++i)
     {
         printf("%d ", a[i]);
     }
@@ -50,4 +59,6 @@ int main(void)
     printf("Starting Position: %d ", idxStartMax);
     printf("\n");
     printf("Ending Position: %d ", idxEnd);
+    printf("\n");
+    printf("Maximum Subsequence: %d ", maxSum);
 }
